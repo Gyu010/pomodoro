@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="bg-wrap">
+    <img src="/img/boathouse.jpg" width="100%" height="100%">
+  </div>
+  <div id="top"></div>
+  <div id="pomodoro-container">
+    <div id="pomodoro-durations">
+      <div id="form-check">
+        <input class="form-check-input" type="radio" name="timeType" id="exampleRadios1" value="pomodoro">
+        <label class="form-check-label-btn" for="exampleRadios1" data-type="pomodoro">pomodoro</label>
+      </div>
+      <div id="form-check">
+        <input class="form-check-input" type="radio" name="timeType" id="exampleRadios2" value="pomodoro">
+        <label class="form-check-label-btn" for="exampleRadios2" data-type="short">short break</label>
+      </div>
+      <div id="form-check">
+        <input class="form-check-input" type="radio" name="timeType" id="exampleRadios3" value="pomodoro">
+        <label class="form-check-label-btn" for="exampleRadios3" data-type="long"> long break</label>
+      </div>
+    </div>
+    <div id="pomodoro-timer">25:00</div>
+    <div id="pomodoro-clock-actions">
+      <button id="pomodoro-start" ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M320-200v-560l440 280-440 280Z"/></svg></button>
+      <button id="pomodoro-stop" ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M560-200v-560h160v560H560Zm-320 0v-560h160v560H240Z"/></svg></button>
+      <button id="pomodoro-reset" ><svg id="resetIcon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-80q-75 0-140.5-28.5t-114-77q-48.5-48.5-77-114T120-440h80q0 117 81.5 198.5T480-160q117 0 198.5-81.5T760-440q0-117-81.5-198.5T480-720h-6l62 62-56 58-160-160 160-160 56 58-62 62h6q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-440q0 75-28.5 140.5t-77 114q-48.5 48.5-114 77T480-80Z"/></svg></button>
+      <button id="pomodoro-setting"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="m680-160 120-120-120-120-28 28 72 72H560v40h163l-71 72 28 28Zm0 80q-83 0-141.5-58.5T480-280q0-83 58.5-141.5T680-480q83 0 141.5 58.5T880-280q0 83-58.5 141.5T680-80Zm-310 0-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 22.5-15t24.5-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-74 56q-30-15-62-23t-66-8q-20 0-38.5 3.5T604-548q-19-33-51.5-52.5T482-620q-58 0-99 41t-41 99q0 38 18.5 70t50.5 51q-6 20-8.5 41.5T400-275q1 56 22.5 106.5T484-80H370Z"/></svg></button>
+    </div>
+  </div>
+
+  <div id="settingsModal" class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div id="modal-header">
+          <button type="button" class="btnClose" id="btn-close"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#FFFFFF"><path d="m291-240-51-51 189-189-189-189 51-51 189 189 189-189 51 51-189 189 189 189-51 51-189-189-189 189Z"/></svg></button>
+        </div>
+        <div class="modal-body">
+          <div class="d-flex align-items-start">
+            <div id="settModal-tab">
+              <button id="settModal-timers-tab">Timers</button>
+            </div>
+
+              <div class="tab-content">
+                <div class="settings-field">
+                  <label>Pomodoro</label>
+                  <input id="settPomodoro" type="number" value="25"> 
+                  <div style="font-size:12px; opacity:0.7; margin-top:2px;">minutes</div>
+                  </div>
+
+                  <div class="settings-field">
+                  <label>Short Break</label>
+                  <input id="settShort" type="number" value="5">
+                  <div style="font-size:12px; opacity:0.7; margin-top:2px;">minutes</div>
+                  </div>
+
+                  <div class="settings-field">
+                  <label>Long Break</label>
+                  <input id="settLong" type="number" value="10">
+                  <div style="font-size:12px; opacity:0.7; margin-top:2px;">minutes</div>
+                  </div>
+                </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button class="btn-reset">Reset all</button>
+          <div>
+            <button class="btnClose" id="settingsCloseBtn2">Close</button>
+            <button class="btn-save">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <audio id="alarmSound" src="/img/alarm.mp3" preload="auto"></audio>
+  <div id="bottom"></div>
+
+  <script src="pomodoro.js"></script>
+</body>
+</html>
