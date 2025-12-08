@@ -4,21 +4,6 @@
     height: 100%;
     overflow: hidden;
   }
-  @media (min-width: 1024px) {
-    body {
-    zoom: 150%;
-    }
-  }
-
-  @media (max-width: 600px) {
-    #pomodoro-timer {
-    font-size: 4rem; 
-    }
-    #pomodoro-clock-actions svg {
-      width: 20px;
-      height: 20px;
-    }
-  }
   body{
     display: flex;
     flex-direction: column;
