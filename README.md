@@ -2,8 +2,12 @@
 
 This project is a Pomodoro timer web application built with HTML, CSS, and JavaScript.
 
+---
+
 ##  Live Site
 https://gyu010.github.io/pomodoro/
+
+---
 
 ## Features
 - Pomodoro, Short Break, and Long Break modes
